@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>718</width>
+    <height>548</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Инспектор Аэропортов</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QGridLayout" name="gridLayout" rowstretch="60,40" columnstretch="70,30">
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>6</number>
+      </property>
+      <item row="0" column="1">
+       <widget class="QGroupBox" name="grB_selectZone">
+        <property name="title">
+         <string>Выбор аэропорта и направления</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QGroupBox" name="grB_airport">
+           <property name="title">
+            <string>Аэропорт</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QComboBox" name="cbox_listAirports"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="grB_route">
+           <property name="title">
+            <string>Направление</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QRadioButton" name="rb_arrival">
+              <property name="text">
+               <string>Прилет</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_departure">
+              <property name="text">
+               <string>Вылет</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="grB_departureDate">
+           <property name="title">
+            <string>Дата вылета</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="QDateEdit" name="de_departureDate">
+              <property name="calendarPopup">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QGroupBox" name="grB_actions">
+        <property name="title">
+         <string>Действия</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QPushButton" name="pb_getFlights">
+           <property name="text">
+            <string>Получить список рейсов</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pb_clear_tv_flights">
+           <property name="text">
+            <string>Очистить поле расписания рейсов</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pb_congestion">
+           <property name="text">
+            <string>Загруженность</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pb_exit">
+           <property name="text">
+            <string>Выход</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="0" rowspan="2">
+       <widget class="QGroupBox" name="grB_flights">
+        <property name="title">
+         <string>Расписание рейсов</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QTableView" name="tv_flights"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>718</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menubar_file">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="menubar_connect"/>
+    <addaction name="menubar_disconnect"/>
+    <addaction name="separator"/>
+    <addaction name="menubar_settings"/>
+    <addaction name="separator"/>
+    <addaction name="menubar_exit"/>
+   </widget>
+   <widget class="QMenu" name="menubar_help">
+    <property name="title">
+     <string>Справка</string>
+    </property>
+    <addaction name="menubar_about"/>
+   </widget>
+   <addaction name="menubar_file"/>
+   <addaction name="menubar_help"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="menubar_settings">
+   <property name="text">
+    <string>Настройки</string>
+   </property>
+  </action>
+  <action name="menubar_about">
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="menubar_connect">
+   <property name="text">
+    <string>Подключиться</string>
+   </property>
+  </action>
+  <action name="menubar_disconnect">
+   <property name="text">
+    <string>Отключиться</string>
+   </property>
+  </action>
+  <action name="menubar_exit">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>cbox_listAirports</tabstop>
+  <tabstop>rb_arrival</tabstop>
+  <tabstop>rb_departure</tabstop>
+  <tabstop>de_departureDate</tabstop>
+  <tabstop>pb_getFlights</tabstop>
+  <tabstop>pb_clear_tv_flights</tabstop>
+  <tabstop>pb_congestion</tabstop>
+  <tabstop>pb_exit</tabstop>
+  <tabstop>tv_flights</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pb_exit</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>697</x>
+     <y>496</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>menubar_exit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
